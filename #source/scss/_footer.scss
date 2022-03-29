@@ -1,0 +1,99 @@
+.footer {
+	padding: 45px 0px;
+	background-color: #1c242a;
+	&__row {
+		@include flexbox();
+		@media (max-width: $md3+px) {
+			display: block;
+			text-align: center;
+		}
+	}
+
+	&__column {
+		&_full {
+			flex: 1 1 auto;
+		}
+		&:last-child {
+			text-align: right;
+		}
+		&:first-child {
+			flex: 0 0 182px;
+		}
+		&_last {
+			@media (max-width: $md3+px) {
+				@include flexbox();
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	}
+
+	&__logo {
+		display: inline-block;
+		margin: 0px 0px 25px 0px;
+	}
+
+	&__copy {
+		@include fz(14);
+		@include lh(21);
+		color: #bb9c66;
+	}
+
+	&__menu {
+		padding: 0px 30px;
+		@include flexbox();
+		flex-wrap: wrap;
+		li {
+			margin: 15px 15px 0px 0px;
+		}
+		@media (max-width: $md3+px) {
+			justify-content: center;
+		}
+	}
+
+	&__list {
+		@include fz(14);
+		@include lh(21);
+		color: #fff;
+		font-weight: 500;
+		letter-spacing: 1.4px;
+		text-transform: uppercase;
+		text-decoration: underline;
+		@media (max-width: $md3+px) {
+			@include fz(12);
+		}
+	}
+
+	&__fone {
+		display: flex;
+		align-items: flex-start;
+		color: #bb9c66;
+		font-family: "Bravo";
+		@include fz(50);
+		text-transform: uppercase;
+		white-space: nowrap;
+		small {
+			@include fz(25);
+		}
+		@media (max-width: $md3+px) {
+			display: inline-flex;
+			margin: 10px 0px 0px 0px;
+		}
+		@media (max-width: $md4+px) {
+			@include fz(25);
+		}
+	}
+
+	&__retern {
+		@include fz(14);
+		color: #bb9c66;
+		background: url("../img/icons/callback.svg") left no-repeat;
+		padding: 0px 0px 0px 12px;
+		span {
+			border-bottom: 1px dashed #bb9c66;
+		}
+		@media (max-width: $md3+px) {
+			margin: 10px 0px;
+		}
+	}
+}

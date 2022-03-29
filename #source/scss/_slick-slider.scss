@@ -1,0 +1,151 @@
+//====================================================================================================
+/* Ограничивающая оболочка */
+.slick-list {
+	overflow: hidden;
+}
+/* Лента слайдов */
+.slider .slick-track {
+	@include flexbox();
+	align-items: flex-start;
+}
+
+/* Обращение к элементам внутри конкретного slidera для проект. Обрати вниманиена .slider*/
+.slider {
+	position: relative;
+}
+.slick-arrow {
+	position: absolute;
+	top: 50%;
+	width: 14px;
+	height: 24px;
+	z-index: 2;
+	@include tran(0, -50%);
+	cursor: pointer;
+	z-index: 1;
+}
+/* Стрелка влево */
+.control-main-slider .slick-arrow.slick-prev {
+	left: 0;
+	background: url("../img/icons/sl-arrow.png") 0 0 no-repeat;
+}
+/* Стрелка вправо */
+.control-main-slider .slick-arrow.slick-next {
+	right: 0;
+	background: url("../img/icons/sl-arrow.png") 0 0 no-repeat;
+	transform: translate(0, -50%) scale(-1, 1);
+}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled {
+	opacity: 0.2;
+}
+
+//=====================================================================================================================
+/* Ограничивающая оболочка */
+.slick-list {
+	overflow: hidden;
+}
+/* Лента слайдов */
+.slider-two .slick-track {
+	@include flexbox();
+	align-items: stretch;
+}
+
+.control-slider-lots {
+	position: relative;
+	@include flexboxinline();
+	align-items: center;
+	margin: 0px 0px 0px 50%;
+	@include tran(-50%, 0);
+}
+
+.control-slider-lots__arrow .slick-arrow {
+	position: absolute;
+	width: 110px;
+	height: 35px;
+	z-index: 2;
+	cursor: pointer;
+	@include tran(0, -50%);
+	@media (max-width: 450px) {
+		width: 50px;
+	}
+}
+
+/* Стрелка влево */
+.control-slider-lots__arrow .slick-arrow.slick-prev {
+	right: 165%;
+	background: url("../img/icons/sl-arrow.svg") 0 0 no-repeat;
+}
+/* Стрелка вправо */
+.control-slider-lots__arrow .slick-arrow.slick-next {
+	left: 165%;
+	background: url("../img/icons/sl-arrow.svg") 0 0 no-repeat;
+	transform: translate(0, -50%) scale(-1, 1);
+}
+//=====================================================================================================================
+/* Ограничивающая оболочка */
+.slick-list {
+	overflow: hidden;
+}
+/* Лента слайдов */
+.slider-small .slick-track {
+	@include flexbox();
+	align-items: flex-start;
+}
+
+.control-slider-quotes {
+	position: relative;
+	@include flexbox();
+	align-items: center;
+	justify-content: center;
+}
+
+.control-slider-quotes .slick-arrow {
+	cursor: pointer;
+	width: 110px;
+	height: 1px;
+	background: #bb9c66;
+	@media (max-width: $md4+px) {
+		width: 80px;
+	}
+}
+
+/* Стрелка влево */
+.control-slider-quotes__decor .slick-arrow.slick-prev {
+	right: 0;
+	position: relative;
+	margin: 0px 92px 0px 0px;
+	@media (max-width: $md4+px) {
+		margin: 0px 50px 0px 0px;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		right: -17px;
+		top: 0%;
+		border-radius: 50%;
+		border: 1px solid #bb9c66;
+		@include tran(0, -50%);
+	}
+}
+/* Стрелка вправо */
+.control-slider-quotes__decor .slick-arrow.slick-next {
+	left: 0;
+	position: relative;
+	margin: 0px 0px 0px 92px;
+	@media (max-width: $md4+px) {
+		margin: 0px 0px 0px 50px;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		left: -17px;
+		top: 50%;
+		border-radius: 50%;
+		border: 1px solid #bb9c66;
+		@include tran(0, calc(-50% + 0.5px));
+	}
+}
